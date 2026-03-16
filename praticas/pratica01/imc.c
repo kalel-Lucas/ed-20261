@@ -11,7 +11,7 @@ float retorna_IMC(float altura, float peso) {
 
 int main () {
 
-	float imc = retorna_IMC(1.77,0.0);
+	float imc = retorna_IMC(1.70,70.0);
 	if (imc<18.5) {
 		printf("\n\tO imc esta na faixa abaixo do peso!");
 	}
@@ -24,6 +24,5 @@ int main () {
     if (imc>=30.0) {
         printf("O imc esta na faixa de obesidade!");
     }
-
-
+    return 0;
 }
