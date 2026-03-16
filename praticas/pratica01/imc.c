@@ -1,22 +1,29 @@
-        #include <stdio.h> 
+#include <stdio.h>
 
-    float devolve_IMC(float altura, float peso) {
-         if (altura<=0.0 || peso<=0.0)
-             return 0.0;
-         {
-            return peso/(altura*altura);
-         };
-     }
 
-     int main () {
-         printf("\n\tResultado do IMC => %.2f",devolve_IMC(1.75,0.0));
-         printf("\n\tResultado do IMC => %.2f",devolve_IMC(1.76,50.0));
-         printf("\n\tResultado do IMC => %.2f",devolve_IMC(1.75,75.0));
-         printf("\n\tResultado do IMC => %.2f",devolve_IMC(1.68,89.0));
-         printf("\n\tResultado do IMC => %.2f",devolve_IMC(1.92,70.0)); 
-         printf("\n\tResultado do IMC => %.2f",devolve_IMC(2.00,100.0));
-         printf("\n\tResultado do IMC => %.2f",devolve_IMC(1.76,67.0));
-          
+float retorna_IMC(float altura, float peso) {
+	if (altura<=0.0 || peso<=0.0) {
+		return 0.0;
+	}
+	return peso/(altura*altura);
+}
 
-         
-     }
+
+int main () {
+
+	float imc = retorna_IMC(1.77,0.0);
+	if (imc<18.5) {
+		printf("\n\tO imc esta na faixa abaixo do peso!");
+	}
+	if (imc>=18.5 && imc<=24.9) {
+		printf("\n\tO imc esta na faixa de peso normal!");
+	}
+	if (imc>=25.0 && imc<=24.9) {
+		printf("O imc esta na faixa do sobrepeso!");
+	}
+    if (imc>=30.0) {
+        printf("O imc esta na faixa de obesidade!");
+    }
+
+
+}
