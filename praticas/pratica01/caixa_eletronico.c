@@ -3,7 +3,7 @@
     void valor_saque (int saque) {
         int cedulas[7] = {200,100,50,20,10,5,2}; 
             if (saque<2|| saque>1000) {
-                printf("Insira um valor valido para saque."); 
+                printf("\tInsira um valor valido para saque."); 
                 return; 
                 }
         else {
