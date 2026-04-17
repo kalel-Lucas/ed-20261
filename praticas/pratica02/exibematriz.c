@@ -45,6 +45,7 @@ int main() {
    
     printf("Tempo com dois lacos: %f segundos\n", tempo_duplo);
     printf("Tempo com um laco: %f segundos\n", tempo_unico);
+    //Ambos apresentam nivel de complexidade O(N^2), pois ambos percorrem a matriz inteira, mas o segundo metodo tem um overhead menor por usar apenas um laco, o que pode resultar em um tempo de execucao ligeiramente menor. 
 
     return 0;
 }
