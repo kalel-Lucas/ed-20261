@@ -15,11 +15,14 @@ int main () {
             printf("O numero %d existe e se localiza na posicao [%d]!\n ",x,i);
             break; 
         }
-        if (i==99 && flag == 0) {
-            printf("O numero nao esta no vetor!\n");
-            break; 
-        }
-        
     }
+     if (flag == 0) {
+         printf("O numero nao esta no vetor!\n");
+        }
+
+    //Acredito que o nível de complexidade do algoritmo seja o(n), pois seu tempo de execucao e preenchimento
+    //espacial podem crescer a depender do valor de entrada!
+    //Acredito que o melhor cenario seria de fato se o elemento estivesse nas primeiras posicoes, e o pior cenario seria se ele estivesse nas ultimas posicoes nou nem existisse no array!
+
     return 0;
 }
