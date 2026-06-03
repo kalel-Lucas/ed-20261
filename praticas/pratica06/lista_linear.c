@@ -7,7 +7,7 @@ typedef struct no_t{
     no*anterior; 
     int dado;
     no*proximo;
-};
+}no;
 
 struct lista_t {
     no*primeiro; 
