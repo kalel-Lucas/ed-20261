@@ -7,7 +7,7 @@ typedef struct no_t{
     no*anterior; 
     int dado;
     no*proximo;
-}no;
+};
 
 struct lista_t {
     no*primeiro; 
@@ -70,4 +70,44 @@ void lista_destruir(lista*l) {
     free(l); 
 }
 
+no*lista_buscar(lista*l,int valor) {
+    no*navegador = l->primeiro; 
+    while (navegador!=NULL) {
+        if (navegador->dado!=valor) 
+        {
+            navegador = navegador->proximo; 
+        }
+        else if (navegador->dado==valor) {
+            break; 
+        }
+    }
+    if (navegador==NULL) {
+    return NULL;
+    }
+    return navegador; 
+}
 
+lista*lista_remover (lista*l,int valor) {
+    no*remover = lista_buscar(l, valor); 
+    if (remover == NULL) {
+        return l; 
+    }
+    if (remover == l->primeiro && remover == l->ultimo) {
+        l->primeiro = NULL; 
+        l->ultimo = NULL; 
+    }
+    else if (remover == l->primeiro) {
+        l->primeiro = remover->proximo; 
+        l->primeiro->anterior = NULL; 
+    }
+    else if (remover == l->ultimo) {
+        l->ultimo = remover->anterior; 
+        l->ultimo->proximo = NULL; 
+    }
+    else {
+        remover->anterior->proximo = remover->proximo; 
+        remover->proximo->anterior = remover->anterior; 
+    }
+    free(remover); 
+    return l;
+}
